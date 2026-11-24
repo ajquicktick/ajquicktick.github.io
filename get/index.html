@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Get Quick Tick</title>
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 0 20px;
+    text-align: center;
+    color: #222;
+    background: #fff;
+  }
+  img { width: 88px; height: 88px; border-radius: 20px; }
+  h1 { font-size: 1.5em; margin: 0; }
+  p { color: #666; margin: 0; }
+  .play {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 14px 24px;
+    border-radius: 10px;
+    background: #4a9fe0;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1em;
+    text-decoration: none;
+  }
+</style>
+</head>
+<body>
+<img src="../icon.png" alt="Quick Tick app icon">
+<h1>Quick Tick</h1>
+<p>Opening Google Play…</p>
+<a class="play" id="play" href="https://play.google.com/store/apps/details?id=com.aj.taptrack&amp;referrer=utm_source%3Dinstagram%26utm_medium%3Dstory%26utm_campaign%3Dsticker">Get it on Google Play</a>
+<script>
+  (function () {
+    var ref = "utm_source%3Dinstagram%26utm_medium%3Dstory%26utm_campaign%3Dsticker";
+    var web = "https://play.google.com/store/apps/details?id=com.aj.taptrack&referrer=" + ref;
+    if (/android/i.test(navigator.userAgent)) {
+      var app = "intent://details?id=com.aj.taptrack&referrer=" + ref +
+        "#Intent;scheme=market;package=com.android.vending;S.browser_fallback_url=" +
+        encodeURIComponent(web) + ";end";
+      document.getElementById("play").href = app;
+      window.location.replace(app);
+    }
+  })();
+</script>
+</body>
+</html>
